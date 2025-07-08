@@ -5,8 +5,12 @@ const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
 server.use(cors({
-  origin: 'https://stu-base-angular.vercel.app'  
+  origin: 'https://stu-base-angular.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }));
+
+server.options('*', cors());
 
 server.use(middlewares);
 server.use(router);

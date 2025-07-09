@@ -15,7 +15,7 @@ server.options('*', cors());
 server.use(middlewares);
 server.use(router);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5300;
 server.listen(PORT, () => {
   console.log(`JSON Server is running on port ${PORT}`);
 });
